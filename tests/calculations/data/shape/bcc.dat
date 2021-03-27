@@ -1,0 +1,9 @@
+SHAPE     HP......=N                                         15 Nov 00
+JOBNAM...=bcc       MSGL.=  1
+FOR001=../kstr/bcc.tfh
+DIR002=./
+DIR006=./
+Lmax..= 30 NSR..=129 NFI..= 31
+NPRN..=  0 IVEF.=  3
+****** Relative atomic sphere radii ASR(1:NQ) ******
+ASR(1).= 1.0000

@@ -1,59 +1,60 @@
 {
-    "name": "aiida-adamant",
-    "author": "Franco Moitzi",
-    "author_email": "franco.moitzi@mcl.at",
-    "description": "AiiDA plugin for performing alloy modelling with Green's function based DFT methods",
-    "url": "https://github.com/francoMU/aiida-adamant",
-    "license": "MIT",
-    "classifiers": [
-        "Programming Language :: Python",
-        "Intended Audience :: Science/Research",
-        "License :: OSI Approved :: MIT License",
-        "Natural Language :: English",
-        "Framework :: AiiDA"
+  "name": "aiida-adamant",
+  "author": "Franco Moitzi",
+  "author_email": "franco.moitzi@mcl.at",
+  "description": "AiiDA plugin for performing alloy modelling with Green's function based DFT methods",
+  "url": "https://github.com/francoMU/aiida-adamant",
+  "license": "MIT",
+  "classifiers": [
+    "Development Status :: 4 - Beta",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.8",
+    "Topic :: Scientific/Engineering :: Physics",
+    "Topic :: Scientific/Engineering :: Chemistry",
+    "Programming Language :: Python",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
+    "Framework :: AiiDA"
+  ],
+  "version": "0.1.0a0",
+  "entry_points": {
+    "aiida.calculations": [
+      "adamant.kgrn_calculation = aiida_adamant.calculations.kgrn_calculation:KgrnCalculation"
     ],
-    "version": "0.1.0a0",
-    "entry_points": {
-        "aiida.data": [
-            "adamant = aiida_adamant.data:DiffParameters"
-        ],
-        "aiida.calculations": [
-            "adamant = aiida_adamant.calculations:DiffCalculation"
-        ],
-        "aiida.parsers": [
-            "adamant = aiida_adamant.parsers:DiffParser"
-        ],
-        "aiida.cmdline.data": [
-            "adamant = aiida_adamant.cli:data_cli"
-        ]
-    },
-    "include_package_data": true,
-    "setup_requires": ["reentry"],
-    "reentry_register": true,
-    "install_requires": [
-        "aiida-core>=1.1.0,<2.0.0",
-        "six",
-        "voluptuous"
+    "aiida.data": [
+      "adamant.kgrn_data = aiida_adamant.data.inputs.kgrn_params:KgrnParamsData"
+    ]
+  },
+  "include_package_data": true,
+  "setup_requires": [
+    "reentry"
+  ],
+  "reentry_register": true,
+  "install_requires": [
+    "aiida-core>=1.1.0,<2.0.0",
+    "six",
+    "voluptuous"
+  ],
+  "extras_require": {
+    "testing": [
+      "pgtest~=1.3.1",
+      "wheel~=0.31",
+      "coverage",
+      "pytest",
+      "pytest-cov"
     ],
-    "extras_require": {
-        "testing": [
-            "pgtest~=1.3.1",
-            "wheel~=0.31",
-            "coverage",
-            "pytest~=3.6,<5.0.0",
-            "pytest-cov"
-        ],
-        "pre-commit": [
-            "astroid==2.2.5",
-            "pre-commit",
-            "flake8",
-            "pylint"
-        ],
-        "docs": [
-            "sphinx",
-            "sphinxcontrib-contentui",
-            "sphinxcontrib-details-directive; python_version>='3.0'",
-            "sphinx-rtd-theme"
-        ]
-    }
+    "pre-commit": [
+      "astroid",
+      "pre-commit",
+      "flake8",
+      "pylint"
+    ],
+    "docs": [
+      "sphinx",
+      "sphinxcontrib-contentui",
+      "sphinxcontrib-details-directive; python_version>='3.0'",
+      "sphinx-rtd-theme"
+    ]
+  }
 }
